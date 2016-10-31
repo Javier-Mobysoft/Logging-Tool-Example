@@ -1,0 +1,15 @@
+filebeat.prospectors:
+- input_type: log
+  paths: ["../logs/*"]
+  json.message_key: event
+  json.keys_under_root: true
+  fields:
+    service: Testing
+    tags: [
+      "Example",
+    ]
+
+output.elasticsearch:
+  hosts: ["192.168.33.100:9200"]
+  template.name: filebeat
+  template.path: filebeat.template.json

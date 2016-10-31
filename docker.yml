@@ -1,0 +1,6 @@
+elk:
+  image: blacktop/elk:4.4
+  ports:
+   - 80:80
+   - 9200:9200
+   
